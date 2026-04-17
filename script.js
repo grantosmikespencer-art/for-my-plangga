@@ -18,17 +18,23 @@ let currentIndex = 0;
 document.getElementById('no-btn').onclick = () => alert("Nice try, but you have to click Yes! 😂");
 
 // Function to move the "No" button
-function moveNoButton() {
-    const container = document.querySelector('.button-container');
+function moveNoButton(event) {
+    // This stops the "click" from happening on mobile
+    if (event) {
+        event.preventDefault();
+    }
+
     const noBtn = document.getElementById('no-btn');
+    const container = document.querySelector('.button-container');
     
     const maxX = container.offsetWidth - noBtn.offsetWidth;
     const maxY = container.offsetHeight - noBtn.offsetHeight;
 
+    // Generate random positions
     const randomX = Math.floor(Math.random() * maxX);
     const randomY = Math.floor(Math.random() * maxY);
 
-    // Remove the initial centering transform so it moves accurately
+    // Apply the movement
     noBtn.style.transform = 'none'; 
     noBtn.style.left = `${randomX}px`;
     noBtn.style.top = `${randomY}px`;
