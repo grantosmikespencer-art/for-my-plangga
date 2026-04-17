@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Hello Plangga!</title>
+</head>
+<body>
+
+    <div id="question-section" class="card">
+        <h1>Hello Plangga! ❤️</h1>
+        <p>Do you love me?</p>
+        
+        <div class="button-container">
+            <button id="yes-btn" onclick="startMemories()">Yes</button>
+            <button id="no-btn" onmouseover="moveNoButton()">No</button>
+        </div>
+    </div>
+
+    <div id="video-section" class="card" style="display:none;">
+        <h1>Wise choice, haha! 😎</h1>
+
+        <video id="cute-video" width="100%" controls>
+            <source src="images/cute-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <p>Weeeeeeee?????</p>
+        <button onclick="showMemories()">See our memories? ✨</button>
+    </div>
+
+    <div id="memory-section" class="card" style="display:none;">
+        <div id="memory-container"></div>
+        <div class="buttons">
+            <button onclick="prevMemory()">Previous</button>
+            <button onclick="nextMemory()">Next</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
